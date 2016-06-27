@@ -1,0 +1,26 @@
+<?php
+/**
+ * Import form
+ *
+ * @category Agere
+ * @package Agere_ImporterModule
+ * @author Popov Sergiy <popov@agere.com.ua>
+ * @datetime: 16.01.2016 16:39
+ */
+$form = $this->form;
+$form->setAttribute('action', $this->url('default/wildcard', [
+	'controller' => $this->current('route')->getParam('controller'),
+	'action' => $this->current('route')->getParam('action'),
+	'type' => $form->get('type')->getValue(),
+]));
+$form->prepare();
+?>
+
+<div class="row">
+	<!-- left column -->
+	<div class="col-md-12">
+		<?= $this->form()->openTag($form) ?>
+		<?= $this->formCollection($form) ?>
+		<?= $this->form()->closeTag() ?>
+	</div>
+</div>

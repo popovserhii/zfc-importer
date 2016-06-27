@@ -3,11 +3,11 @@
  * Import fieldset
  *
  * @category Agere
- * @package Agere_Spare
+ * @package Agere_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 26.09.14 15:31
  */
-namespace Agere\ZfcModule\Form;
+namespace Agere\ZfcImporter\Form;
 
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;

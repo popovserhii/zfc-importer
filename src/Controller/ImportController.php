@@ -1,9 +1,9 @@
 <?php
-namespace Agere\ZfcModule\Controller;
+namespace Agere\ZfcImporter\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\File\Transfer\Adapter\Http;
-use Agere\ZfcModule\Form\ImportForm;
+use Agere\ZfcImporter\Form\ImportForm;
 use Agere\Importer\Importer;
 
 class ImportController extends AbstractActionController {

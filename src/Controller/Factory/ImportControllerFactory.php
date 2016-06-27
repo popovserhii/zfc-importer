@@ -3,14 +3,14 @@
  * Import Controller Factory
  *
  * @category Agere
- * @package Agere_Importer
+ * @package Agere_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 04.04.2016 0:19
  */
-namespace Agere\ZfcModule\Controller\Factory;
+namespace Agere\ZfcImporter\Controller\Factory;
 
-use Agere\ZfcModule\Controller\ImportController;
-use Agere\ZfcModule\Form\ImportForm;
+use Agere\ZfcImporter\Controller\ImportController;
+use Agere\ZfcImporter\Form\ImportForm;
 use Agere\Importer\Factory\DriverFactory;
 use Agere\Importer\Importer;
 use Agere\Db\Db;

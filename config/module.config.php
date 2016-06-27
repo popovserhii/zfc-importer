@@ -1,5 +1,5 @@
 <?php
-namespace Agere\ZfcModule;
+namespace Agere\ZfcImporter;
 
 return [
     'importer' => [

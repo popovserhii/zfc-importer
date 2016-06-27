@@ -3,11 +3,11 @@
  * General import form
  *
  * @category Agere
- * @package Agere_ImporterModule
+ * @package Agere_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 16.01.2016 17:09
  */
-namespace Agere\ZfcModule\Form;
+namespace Agere\ZfcImporter\Form;
 
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;

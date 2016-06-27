@@ -20,14 +20,11 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.5",
-    "agerecompany/php-importer": "dev-dev"
+    "agerecompany/php-importer": "dev-master"
   },
   "autoload": {
     "psr-4": {
       "Agere\\ZfcImporter\\": "src/"
-    },
-    "classmap": [
-      "./Module.php"
-    ]
+    }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "agerecompany/zfc-importer",
+  "description": "ZF2 module for PHP Importer library",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "importer",
+    "csv",
+    "excel",
+    "agere"
+  ],
+  "authors": [
+    {
+      "name": "Sergiy Popov",
+      "email": "popow.sergiy@gmail.com",
+      "homepage": "http://agere.com.ua/",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5",
+    "agerecompany/php-importer": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Agere\\ZfcImporter\\": "src/"
+    }
+  }
+}

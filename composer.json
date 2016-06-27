@@ -20,7 +20,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.5",
-    "agerecompany/php-importer": "dev-master"
+    "agerecompany/php-importer": "dev-dev"
   },
   "autoload": {
     "psr-4": {

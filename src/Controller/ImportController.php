@@ -62,12 +62,7 @@ class ImportController extends AbstractActionController {
 					if ($adapter->receive($adapter->getFileName('fileupload', false))) {
                         $this->importer->import($this->params('type'), $adapter->getFileName('fileupload'));
 
-                        $flash = $this->flashMessenger();
-                        foreach ($this->importer->getMessages() as $namespace => $messages) {
-                            foreach ($messages as $message) {
-                                $flash->setNamespace($namespace)->addMessage($message);
-                            }
-                        }
+                        $this->prepareMessages();
 					}
 				}
 			}
@@ -79,4 +74,26 @@ class ImportController extends AbstractActionController {
 		];
 	}
 
+    public function importLiteAction()
+    {
+        $request = $this->getRequest();
+        //$this->form->get('type')->setValue($this->params('type'));
+
+        //\Zend\Debug\Debug::dump([$this->params('type'), $this->params('source')]); die(__METHOD__);
+
+        //if ($request->isPost()) {
+            $this->importer->import($this->params('type'), $this->params('source'));
+            $this->prepareMessages();
+        //}
+    }
+
+    protected function prepareMessages()
+    {
+        $flash = $this->flashMessenger();
+        foreach ($this->importer->getMessages() as $namespace => $messages) {
+            foreach ($messages as $message) {
+                $flash->setNamespace($namespace)->addMessage($message);
+            }
+        }
+    }
 }

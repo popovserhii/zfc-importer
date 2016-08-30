@@ -13,6 +13,7 @@ composer require agerecompany/zfc-importer -o
 Add `Agere\ZfcImporter` to your `config/application.config.php`
 
 ## Usage
+### Basic usage
 See file example [here](https://github.com/agerecompany/php-importer/blob/dev/README.md#example-import-file).
 
 Create new module and add import configuration

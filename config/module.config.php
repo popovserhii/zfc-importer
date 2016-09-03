@@ -2,6 +2,8 @@
 namespace Agere\ZfcImporter;
 
 return [
+    'navigation' => require_once 'navigation.config.php',
+
     'importer' => [
         'file_upload_path' => getcwd() . '/public/uploads/importer/'
     ],

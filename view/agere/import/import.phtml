@@ -9,18 +9,15 @@
  */
 $form = $this->form;
 $form->setAttribute('action', $this->url('default/wildcard', [
-	'controller' => $this->current('route')->getParam('controller'),
-	'action' => $this->current('route')->getParam('action'),
-	'type' => $form->get('type')->getValue(),
+    'controller' => $this->current('route')->getParam('controller'),
+    'action' => $this->current('route')->getParam('action'),
+    'type' => $form->get('type')->getValue(),
 ]));
 $form->prepare();
 ?>
 
 <div class="row">
-	<!-- left column -->
-	<div class="col-md-12">
-		<?= $this->form()->openTag($form) ?>
-		<?= $this->formCollection($form) ?>
-		<?= $this->form()->closeTag() ?>
-	</div>
+    <?= $this->form()->openTag($form) ?>
+    <?= $this->formCollection($form) ?>
+    <?= $this->form()->closeTag() ?>
 </div>

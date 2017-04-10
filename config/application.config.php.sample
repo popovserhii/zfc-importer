@@ -1,0 +1,19 @@
+<?php
+return [
+    // @link http://zf2.pp.ua/docs/ru/tutorials/config.advanced.html
+    'service_listener_options' => [
+        // Importer Service Manager
+        [
+            'service_manager' => 'ImporterPluginManager',
+            'config_key'      => 'importer_plugins',
+            'interface'       => \Agere\Importer\Service\Plugin\ImporterPluginProviderInterface::class,
+            'method'          => 'getImporterPluginConfig',
+        ],
+    ],
+
+    'service_manager' => [
+        'factories' => [ // Important! You must use factory for compatibility with ZF3
+            'ImporterPluginManager' => \Agere\Importer\Service\Plugin\ImporterPluginFactory::class,
+        ],
+    ],
+];

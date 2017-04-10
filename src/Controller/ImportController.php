@@ -76,7 +76,7 @@ class ImportController extends AbstractActionController {
 
     public function importLiteAction()
     {
-        $request = $this->getRequest();
+        //$request = $this->getRequest();
         //$this->form->get('type')->setValue($this->params('type'));
 
         //\Zend\Debug\Debug::dump([$this->params('type'), $this->params('source')]); die(__METHOD__);

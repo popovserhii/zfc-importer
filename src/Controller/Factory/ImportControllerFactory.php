@@ -11,7 +11,7 @@ namespace Agere\ZfcImporter\Controller\Factory;
 
 use Agere\ZfcImporter\Controller\ImportController;
 use Agere\ZfcImporter\Form\ImportForm;
-use Agere\Importer\Factory\DriverFactory;
+use Agere\Importer\DriverFactory;
 use Agere\Importer\Importer;
 use Agere\Db\Db;
 
@@ -26,8 +26,10 @@ class ImportControllerFactory
             ? $sm->get('Agere\Db')
             : (new Db())->setPdo($sm->get('Doctrine\ORM\EntityManager')->getConnection());
 
+
         $config = $sm->get('Config');
-        $factory = new DriverFactory($config['importer']);
+        $importerContainer = $sm->get('ImporterPluginManager');
+        $factory = new DriverFactory($config['importer'], $importerContainer);
         $importer = new Importer($factory, $db);
 
         /** @var ImportForm $form */

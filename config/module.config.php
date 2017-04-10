@@ -1,11 +1,23 @@
 <?php
 namespace Agere\ZfcImporter;
 
-return [
-    'navigation' => require_once 'navigation.config.php',
+use Agere\Importer\Driver;
 
+return [
     'importer' => [
         'file_upload_path' => getcwd() . '/public/uploads/importer/'
+    ],
+
+    'importer_plugins' => [
+        'aliases' => [
+            'SoapDriver' => Driver\Soap::class,
+            'SoapCombinedAdapter' => Driver\Adapter\SoapCombinedAdapter::class,
+        ],
+        'factories' => [
+            'Config' => Service\Factory\DefaultConfigFactory::class,
+            Driver\Soap::class => Driver\Factory\SoapFactory::class,
+            Driver\Adapter\SoapCombinedAdapter::class => Driver\Factory\SoapCombinedAdapterFactory::class,
+        ],
     ],
 
     'controllers' => [

@@ -5,7 +5,12 @@ use Agere\Importer\Driver;
 
 return [
     'importer' => [
-        'file_upload_path' => getcwd() . '/public/uploads/importer/'
+        'file_upload_path' => getcwd() . '/public/uploads/importer/',
+        'driver_options' => [
+            'soap' => [
+                'default_connection' => 'default',
+            ],
+        ],
     ],
 
     'importer_plugins' => [

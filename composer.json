@@ -18,7 +18,7 @@
   ],
   "require": {
     "php": ">=5.5",
-    "popov/php-importer": "~0.1"
+    "popov/php-importer": "dev-master"
   },
   "autoload": {
     "psr-4": {

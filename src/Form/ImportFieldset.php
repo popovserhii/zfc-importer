@@ -2,12 +2,12 @@
 /**
  * Import fieldset
  *
- * @category Agere
- * @package Agere_ZfcImporter
+ * @category Popov
+ * @package Popov_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 26.09.14 15:31
  */
-namespace Agere\ZfcImporter\Form;
+namespace Popov\ZfcImporter\Form;
 
 use Zend\Form\Fieldset;
 use Zend\InputFilter\InputFilterProviderInterface;
@@ -68,7 +68,7 @@ class ImportFieldset extends Fieldset implements InputFilterProviderInterface {
 					[
 						'name' => 'DoctrineModule\Validator\NoObjectExists',
 						'options' => [
-							'object_repository' => $this->getObjectManager()->getRepository('Agere\Project\Document\Project'),
+							'object_repository' => $this->getObjectManager()->getRepository('Popov\Project\Document\Project'),
 							'fields' => 'code',
 							'messages' => [
 								'objectFound' => 'Sorry, a project with this code already exists!'

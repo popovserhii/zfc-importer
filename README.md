@@ -5,12 +5,12 @@ ZF2 module for PHP Importer library
 
 Install it with ``composer``
 ```sh
-composer require agerecompany/zfc-importer -o
+composer require popov/zfc-importer -o
 ```
 
 > NOTE: with 1.x we dropped support for other installation technics. Especially the ZF2 autoloading was dropped. You just need to switch to composer installation, which will make your life easier, since it comes with all needed features
 
-Add `Agere\ZfcImporter` to your `config/application.config.php`
+Add `Popov\ZfcImporter` to your `config/modules.config.php`
 
 ## Usage
 ### Basic usage
@@ -18,8 +18,8 @@ See file example [here](https://github.com/agerecompany/php-importer/blob/dev/RE
 
 Create new module and add import configuration
 ```php
-// module/Agere/Discount/config/module.config.php
-namespace Agere\Discount;
+// module/Popov/Discount/config/module.config.php
+namespace Popov\Discount;
 
 return [
   'importer' => require_once(__DIR__ . '/importer.config.php'),
@@ -27,17 +27,17 @@ return [
 ```
 
 ```php
-// module/Agere/Discount/config/importer.config.php
-namespace Agere\Discount;
+// module/Popov/Discount/config/importer.config.php
+namespace Popov\Discount;
 
 return [
     'tasks' => [
-        __NAMESPACE__ . '\\Card' => [
+        __NAMESPACE__ . '\\Card' => [ // on the inner level will be converted to "popov-discount-card"
             'driver' => 'libxl',
             'fields_map' => [
                 [
-                    'Номінал' => ['name' => 'discount', '__filter' => ['percentToInt']],
-                    'Серія' => 'serial'
+                    'Nominal' => ['name' => 'discount', '__filter' => ['percentToInt']],
+                    'Serial' => 'serial',
                     '__table' => 'discount_card',
                     '__codename' => 'discount',
                     '__identifier' => 'code',
@@ -49,5 +49,5 @@ return [
 ];
 ```
 
-Now you can go to http://example.com/importer/import/type/agere-discount-card and select file for import.
-You can see ```/type/agere-discount-card``` in url will be converted to ```Agere\Discount\Card```  that correspond ```__NAMESPACE__ . '\\Card'``` key in configuration.
+Now you can go to http://example.com/importer/import/type/popov-discount-card and select file for import.
+As you can see ```/type/popov-discount-card``` in url will be converted to ```Popov\Discount\Card```  that correspond ```__NAMESPACE__ . '\\Card'``` key in configuration.

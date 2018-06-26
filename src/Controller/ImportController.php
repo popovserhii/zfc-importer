@@ -1,10 +1,10 @@
 <?php
-namespace Agere\ZfcImporter\Controller;
+namespace Popov\ZfcImporter\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\File\Transfer\Adapter\Http;
-use Agere\ZfcImporter\Form\ImportForm;
-use Agere\Importer\Importer;
+use Popov\ZfcImporter\Form\ImportForm;
+use Popov\Importer\Importer;
 
 class ImportController extends AbstractActionController {
 
@@ -44,7 +44,7 @@ class ImportController extends AbstractActionController {
 					}
                     $this->form->setMessages(['fileupload' => $error]);
 				} else {
-                    $pathUploadFiles = $this->importer->getDriverFactory()->getConfig()['file_upload_path'];
+                    $pathUploadFiles = $this->importer->getDriverCreator()->getConfig()['file_upload_path'];
 					if (!is_dir($pathUploadFiles)) {
 						mkdir($pathUploadFiles, 0775, true);
 					}

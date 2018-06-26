@@ -1,7 +1,7 @@
 <?php
-namespace Agere\ZfcImporter;
+namespace Popov\ZfcImporter;
 
-use Agere\Importer\Driver;
+use Popov\Importer\Driver;
 
 return [
     'importer' => [
@@ -11,6 +11,14 @@ return [
                 'default_connection' => 'default',
             ],
         ],
+        #'helpers' => [
+        #    'prepare' => [
+        #        'discountSerial' => Service\Import\Helper\PrepareDiscountSerial::class
+        #    ]
+        #],
+        #'drivers' => [
+        #    'RankParser' => RankParser::class,
+        #],
     ],
 
     'importer_plugins' => [
@@ -19,7 +27,7 @@ return [
             'SoapCombinedAdapter' => Driver\Adapter\SoapCombinedAdapter::class,
         ],
         'factories' => [
-            'Config' => Service\Factory\DefaultConfigFactory::class,
+            //'Config' => Service\Factory\DefaultConfigFactory::class,
             Driver\Soap::class => Driver\Factory\SoapFactory::class,
             Driver\Adapter\SoapCombinedAdapter::class => Driver\Factory\SoapCombinedAdapterFactory::class,
         ],

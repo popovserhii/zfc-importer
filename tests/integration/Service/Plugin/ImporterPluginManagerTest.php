@@ -2,18 +2,18 @@
 /**
  * Importer Container Test
  *
- * @category Agere
- * @package Agere_ZfcImporter
+ * @category Popov
+ * @package Popov_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 07.04.2017 16:54
  */
-namespace AgereTest\ZfcImporter\Factory;
+namespace PopovTest\ZfcImporter\Factory;
 
 use Mockery;
 use Zend\Stdlib\Exception;
 use PHPUnit_Framework_TestCase as TestCase;
-use AgereTest\ZfcImporter\Bootstrap;
-use Agere\Importer\Driver\Soap;
+use PopovTest\ZfcImporter\Bootstrap;
+use Popov\Importer\Driver\Soap;
 
 class ImporterPluginManagerTest extends TestCase
 {

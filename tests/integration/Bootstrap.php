@@ -1,5 +1,5 @@
 <?php
-namespace AgereTest\ZfcImporter;
+namespace PopovTest\ZfcImporter;
 
 use Zend\Mvc\Service\ServiceManagerConfig;
 use Zend\ServiceManager\ServiceManager;
@@ -30,7 +30,7 @@ class Bootstrap
         #        'module_paths' => $zf2ModulePaths,
         #    ],
         #    'modules' => [
-        #        'Agere\Progress',
+        #        'Popov\Progress',
         #    ],
         #];
 

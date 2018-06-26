@@ -2,18 +2,18 @@
 /**
  * Import Controller Factory
  *
- * @category Agere
- * @package Agere_ZfcImporter
+ * @category Popov
+ * @package Popov_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 04.04.2016 0:19
  */
-namespace Agere\ZfcImporter\Controller\Factory;
+namespace Popov\ZfcImporter\Controller\Factory;
 
-use Agere\ZfcImporter\Controller\ImportController;
-use Agere\ZfcImporter\Form\ImportForm;
-use Agere\Importer\DriverFactory;
-use Agere\Importer\Importer;
-use Agere\Db\Db;
+use Popov\ZfcImporter\Controller\ImportController;
+use Popov\ZfcImporter\Form\ImportForm;
+use Popov\Importer\DriverCreator;
+use Popov\Importer\Importer;
+use Popov\Db\Db;
 
 class ImportControllerFactory
 {
@@ -22,14 +22,14 @@ class ImportControllerFactory
         $sm = $cm->getServiceLocator();
         $fm = $sm->get('FormElementManager');
 
-        $db = $sm->has('Agere\Db')
-            ? $sm->get('Agere\Db')
+        $db = $sm->has('Popov\Db')
+            ? $sm->get('Popov\Db')
             : (new Db())->setPdo($sm->get('Doctrine\ORM\EntityManager')->getConnection());
 
 
         $config = $sm->get('Config');
         $importerContainer = $sm->get('ImporterPluginManager');
-        $factory = new DriverFactory($config['importer'], $importerContainer);
+        $factory = new DriverCreator($config['importer'], $importerContainer);
         $importer = new Importer($factory, $db);
 
         /** @var ImportForm $form */

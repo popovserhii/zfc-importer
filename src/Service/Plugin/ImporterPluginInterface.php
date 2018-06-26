@@ -2,13 +2,13 @@
 /**
  * Plugin Interface
  *
- * @category Agere
- * @package Agere_Project
+ * @category Popov
+ * @package Popov_Project
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 09.03.15 21:51
  */
 
-namespace Agere\ZfcImporter\Service\Plugin;
+namespace Popov\ZfcImporter\Service\Plugin;
 
 
 interface ImporterPluginInterface {

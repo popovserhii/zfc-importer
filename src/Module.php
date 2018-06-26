@@ -1,5 +1,5 @@
 <?php
-namespace Agere\ZfcImporter;
+namespace Popov\ZfcImporter;
 
 class Module
 {

@@ -2,30 +2,19 @@
 /**
  * Importer Plugin Manager
  *
- * @category Agere
- * @package Agere_Importer
+ * @category Popov
+ * @package Popov_Importer
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 05.04.17 23:47
  */
-namespace Agere\ZfcImporter\Service\Plugin;
+namespace Popov\ZfcImporter\Service\Plugin;
 
 use Zend\Stdlib\Exception;
-use Zend\ServiceManager\ConfigInterface;
 use Zend\ServiceManager\AbstractPluginManager;
 
 class ImporterPluginManager extends AbstractPluginManager
 {
-    /**
-     * Default set of extension classes
-     * Note: Use config notation for more flexibility
-     *
-     * @var array
-     */
-    protected $invokableClasses = [
-        //'web-app' => 'Agere\Project\Service\Plugin\WebApp',
-    ];
-
-    public function validatePlugin($plugin)
+    public function validate($plugin)
     {
         return true;
 

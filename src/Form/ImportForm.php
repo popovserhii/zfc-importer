@@ -2,12 +2,12 @@
 /**
  * General import form
  *
- * @category Agere
- * @package Agere_ZfcImporter
+ * @category Popov
+ * @package Popov_ZfcImporter
  * @author Popov Sergiy <popov@agere.com.ua>
  * @datetime: 16.01.2016 17:09
  */
-namespace Agere\ZfcImporter\Form;
+namespace Popov\ZfcImporter\Form;
 
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilterProviderInterface;
@@ -23,7 +23,7 @@ class ImportForm extends Form implements InputFilterProviderInterface {
 		// Add the import fieldset, and set it as the base fieldset
 		/*$this->add([
 			'name' => 'spare-import',
-			'type' => 'Agere\Spare\Form\ImportFieldset',
+			'type' => 'Popov\Spare\Form\ImportFieldset',
 			'options' => [
 				'use_as_base_fieldset' => true,
 			],
@@ -82,7 +82,7 @@ class ImportForm extends Form implements InputFilterProviderInterface {
 					[
 						'name' => 'DoctrineModule\Validator\NoObjectExists',
 						'options' => [
-							'object_repository' => $this->getObjectManager()->getRepository('Agere\Project\Document\Project'),
+							'object_repository' => $this->getObjectManager()->getRepository('Popov\Project\Document\Project'),
 							'fields' => 'code',
 							'messages' => [
 								'objectFound' => 'Sorry, a project with this code already exists!'

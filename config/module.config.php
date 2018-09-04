@@ -4,6 +4,13 @@ namespace Popov\ZfcImporter;
 use Popov\Importer\Driver;
 
 return [
+
+    'dependencies' => [
+        'invokables' => [
+            \Popov\Importer\ObservableInterface::class => Service\Observable::class
+        ]
+    ],
+
     'importer' => [
         'file_upload_path' => getcwd() . '/public/uploads/importer/',
         'driver_options' => [

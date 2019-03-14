@@ -5,6 +5,7 @@ use Popov\Importer\Driver;
 
 return [
 
+
     'dependencies' => [
         'invokables' => [
             \Popov\Importer\ObservableInterface::class => Service\Observable::class
@@ -18,11 +19,9 @@ return [
                 'default_connection' => 'default',
             ],
         ],
-        #'helpers' => [
-        #    'prepare' => [
-        #        'discountSerial' => Service\Import\Helper\PrepareDiscountSerial::class
-        #    ]
-        #],
+        'helpers' => [
+            'CounterCheckerPrepare' => \Popov\Importer\Helper\PrepareCounter::class
+        ],
         #'drivers' => [
         #    'RankParser' => RankParser::class,
         #],

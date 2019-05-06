@@ -20,7 +20,7 @@ return [
             ],
         ],
         'helpers' => [
-            'CounterCheckerPrepare' => \Popov\Importer\Helper\PrepareCounter::class
+            'CounterPrepare' => \Popov\Importer\Helper\PrepareCounter::class
         ],
         #'drivers' => [
         #    'RankParser' => RankParser::class,
